@@ -1,0 +1,27 @@
+[package]
+name = "extension"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ivan Kudriavtsev <ivan.a.kudryavtsev@gmail.com>"]
+description = "Demo extension"
+homepage = "https://github.com/insight-platform/pyo3-sphinx-documentation"
+repository = "https://github.com/insight-platform/pyo3-sphinx-documentation"
+readme = "../README.md"
+license="Apache-2.0"
+rust-version = "1.66"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies.pyo3]
+version = "0.18"
+
+[build-dependencies]
+pyo3-build-config = "0.18"
+
+[package.metadata.maturin]
+python-source = "python"
+
+[features]
+extension-module = ["pyo3/extension-module"]
+default = ["extension-module"]
