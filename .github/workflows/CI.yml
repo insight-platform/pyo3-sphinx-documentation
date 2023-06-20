@@ -36,6 +36,7 @@ jobs:
           args: --release --out dist --find-interpreter --manifest-path extension/Cargo.toml
           sccache: 'true'
           manylinux: auto
+          before-script-linux: fake-deps.sh
       - name: Upload wheels
         uses: actions/upload-artifact@v3
         with:
